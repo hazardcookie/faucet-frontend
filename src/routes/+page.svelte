@@ -1,12 +1,9 @@
 <script lang="ts">
-  import type { PageData } from './$types';
-  import Card from '../lib/components/Card.svelte';
+	import type { PageData } from './$types';
+	import Card from '../lib/components/Card.svelte';
 
-  export let data: PageData;
-  $: ({ wallet } = data);
-
-  
-
+	export let data: PageData;
+	$: ({ wallet } = data);
 </script>
 
 <h1>Cookie's Faucet 🍪</h1>

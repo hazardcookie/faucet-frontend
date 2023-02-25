@@ -1,3 +1,5 @@
 export type Faucet = {
-    message: string;
+	address: string;
+	secret: string;
+	balance: number;
 };
