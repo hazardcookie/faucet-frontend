@@ -1,6 +1,7 @@
 <script lang="ts">
   import Card from '$lib/components/Card.svelte';
   import Loading from '$lib/components/Loading.svelte';
+  import Connect from '$lib/components/Connect.svelte';
   import type { Faucet } from '$lib/types/';
   import { loading } from '$lib/components/loading';
 
@@ -45,6 +46,7 @@
   <p>✅ Success!</p>
   <p>👉 Click on the keys to copy to your clipboard.</p>
   <Card {wallet} />
+  <Connect />
 {/if}
 
 <style>

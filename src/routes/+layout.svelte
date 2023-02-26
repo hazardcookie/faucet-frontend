@@ -15,9 +15,4 @@
     justify-content: space-between;
     width: 100%;
   }
-  @media only screen and (min-width: 900px) {
-    .dapp_container {
-      flex-direction: column;
-    }
-  }
 </style>

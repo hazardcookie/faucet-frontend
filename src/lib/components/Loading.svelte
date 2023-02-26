@@ -31,6 +31,13 @@
     animation: moveLoader 1.3s infinite alternate;
   }
 
+  @media only screen and (max-width: 600px) {
+    img {
+      position: relative;
+      inset: calc(55% - calc(var(--size) / 2));
+    }
+  }
+
   @keyframes moveLoader {
     from {
       transform: translate3d(150px, 0, 0);
