@@ -1,10 +1,10 @@
 import type { Mapped_Keys } from '../types';
 import { bridge } from './transaction';
 import { mapXrplSecretToEvm } from 'xrpl-evm-mapping';
-import { Client, Wallet } from 'xrpl';
 import type { AccountTxRequest } from 'xrpl';
 import { generateFundedWallet } from '@thebettermint/xrpl-auto-funder';
-
+import pkg from 'xrpl';
+const { Client, Wallet } = pkg;
 export const wait = async (time: number) => {
   await new Promise((resolve) => {
     setTimeout(resolve, time);
@@ -12,7 +12,7 @@ export const wait = async (time: number) => {
 };
 
 export async function createAndBridge() {
-  const client: Client = new Client('wss://s.devnet.rippletest.net:51233');
+  const client = new Client('wss://s.devnet.rippletest.net:51233');
   await client.connect();
 
   const faucet = await generateFundedWallet('devnet');
