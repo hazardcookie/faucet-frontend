@@ -43,7 +43,7 @@
   {/if}
 {:else}
   <p>✅ Success!</p>
-  <p>ℹ️ Click on each key to autocopy it's value to your clipboard.</p>
+  <p>👉 Click on the keys to copy to your clipboard.</p>
   <Card {wallet} />
 {/if}
 

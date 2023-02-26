@@ -63,6 +63,10 @@
     cursor: pointer;
   }
 
+  .card code:hover {
+    background-color: rgba(57, 36, 61, 0.304);
+  }
+
   @media only screen and (max-width: 600px) {
     .card code {
       overflow: hidden;

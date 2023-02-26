@@ -4,7 +4,7 @@
 
 <div class="dapp_container">
   <h1>Cookie's Faucet 🍪</h1>
-  <p>Create a funded XRPL EVM-Devnet wallet below</p>
+  <p>Create a funded XRPL EVM-Devnet wallet below.</p>
   <slot />
 </div>
 
