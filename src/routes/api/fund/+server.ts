@@ -8,7 +8,7 @@ export const GET: RequestHandler = async () => {
   const faucet: Faucet = {
     address: wallet.mapped_evm_public_address,
     secret: wallet.mapped_evm_private_key,
-    balance: 950
+    balance: 420
   };
 
   return json(faucet);

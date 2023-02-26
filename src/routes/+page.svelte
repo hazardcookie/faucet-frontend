@@ -26,10 +26,16 @@
 <button
   class="faucet_button"
   on:click={() => {
+    if (load === false) {
+      load = true;
+    }
     create();
-    loading.setLoading(true, 'Creating and funding wallet, please wait...');
-  }}>Fund Wallet</button
+    loading.setLoading(true, '💰 Generating funded wallet, one moment please!');
+  }}
 >
+  Generate Wallet
+</button>
+
 {#if load}
   <p />
   {#if fetching === true}
