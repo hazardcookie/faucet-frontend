@@ -2,26 +2,35 @@
   import Card from '$lib/components/Card.svelte';
   import type { Faucet } from '$lib/types/';
 
-  let loading = false;
+  let loading = true;
+  let fetching = 'no';
+  let wallet: any;
 
-  let wallet: Faucet | undefined;
 
   async function create() {
-    loading = true;
+    fetching = 'yes';
     const response = await fetch('/api/fund');
     const data = await response.json();
-    wallet = data;
-    console.log(data)
-    return data;
+    if (response.ok) {
+      wallet = data
+      fetching = 'no';
+      loading = false;
+      return data as Faucet;
+    } else {
+      return { address: "error", secret: "error", balance: 0} as Faucet
+    }
   }
 </script>
 
 <button class="faucet_button" on:click={create}>Fund Wallet</button>
-{#if loading === true}
-  Creating and funding wallet, please wait...
-{:else if wallet !== undefined}
-  <Card {wallet} />
-{/if}
+  {#if loading}
+  <p></p>
+    {#if fetching === 'yes'}
+      <p>Generating wallet, please wait...</p>
+    {/if}
+  {:else}
+    <Card {wallet} />
+  {/if}
 
 <style>
   .faucet_button {

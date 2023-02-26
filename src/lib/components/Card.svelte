@@ -8,7 +8,7 @@
     <h5 class="card-title">Wallet</h5>
     <p class="card-text"><b>Address:</b> {wallet.address}</p>
     <p class="card-text"><b>Secret:</b> {wallet.secret}</p>
-    <p class="card-text"><b>Balance:</b> {wallet.balance}</p>
+    <p class="card-text"><b>Balance:</b> {wallet.balance} xrp</p>
   </div>
 </div>
 
