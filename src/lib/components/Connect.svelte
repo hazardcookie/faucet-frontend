@@ -34,7 +34,7 @@
 
 <style>
   .card {
-    background-color: rgb(30, 199, 255);
+    background-color: rgb(30, 169, 255);
     border: none;
     color: white;
     padding: 15px 15px;

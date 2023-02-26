@@ -12,16 +12,23 @@ body {
   color: white;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  padding-top: 5rem;
+  padding-top: 3rem;
   overflow: auto;
   height: 100%;
+  padding-bottom: 3rem;
 }
 
 @media only screen and (min-width: 900px) {
   body {
-    padding-top: 8rem;
+    padding-top: 3rem;
     padding-right: 15rem;
     padding-left: 15rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    padding-right: 7rem;
   }
 }
 

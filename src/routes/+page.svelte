@@ -2,6 +2,7 @@
   import Card from '$lib/components/Card.svelte';
   import Loading from '$lib/components/Loading.svelte';
   import Connect from '$lib/components/Connect.svelte';
+  import Footer from '$lib/components/Footer.svelte';
   import type { Faucet } from '$lib/types/';
   import { loading } from '$lib/components/loading';
 
@@ -46,8 +47,10 @@
   <p>✅ Success!</p>
   <p>👉 Click on the keys to copy to your clipboard.</p>
   <Card {wallet} />
+  <p>ℹ️ Add the devnet to Metamask with the settings below.</p>
   <Connect />
 {/if}
+<Footer />
 
 <style>
   .faucet_button {
