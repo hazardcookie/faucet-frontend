@@ -44,6 +44,7 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 10px;
+    width: 200px;
   }
   .faucet_button:hover {
     background-color: rgb(150, 0, 255);
