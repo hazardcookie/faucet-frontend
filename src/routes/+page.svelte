@@ -1,19 +1,21 @@
 <script lang="ts">
   import Card from '$lib/components/Card.svelte';
+  import Loading from '$lib/components/Loading.svelte';
   import type { Faucet } from '$lib/types/';
+  import { loading } from '$lib/components/loading';
 
-  let loading = true;
-  let fetching = 'no';
+  let load = true;
+  let fetching = false;
   let wallet: any;
 
   async function create() {
-    fetching = 'yes';
+    fetching = true;
     const response = await fetch('/api/fund');
     const data = await response.json();
     if (response.ok) {
       wallet = data;
-      fetching = 'no';
-      loading = false;
+      fetching = false;
+      load = false;
       return data as Faucet;
     } else {
       return { address: 'error', secret: 'error', balance: 0 } as Faucet;
@@ -21,11 +23,17 @@
   }
 </script>
 
-<button class="faucet_button" on:click={create}>Fund Wallet</button>
-{#if loading}
+<button
+  class="faucet_button"
+  on:click={() => {
+    create();
+    loading.setLoading(true, 'Creating and funding wallet, please wait...');
+  }}>Fund Wallet</button
+>
+{#if load}
   <p />
-  {#if fetching === 'yes'}
-    <p>Generating wallet, please wait...</p>
+  {#if fetching === true}
+    <Loading />
   {/if}
 {:else}
   <Card {wallet} />
