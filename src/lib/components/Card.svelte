@@ -62,4 +62,13 @@
     border-radius: 10px;
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 600px) {
+    .card code {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 73vw;
+    }
+  }
 </style>

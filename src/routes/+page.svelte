@@ -54,8 +54,6 @@
     color: white;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
@@ -63,6 +61,6 @@
     width: 200px;
   }
   .faucet_button:hover {
-    background-color: rgb(150, 0, 255);
+    background-color: rgb(255, 0, 251);
   }
 </style>
