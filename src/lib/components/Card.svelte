@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let wallet: any;
+  import type { Faucet } from '../../lib/types/';
+  export let wallet: Faucet;
 </script>
 
 <div class="card">

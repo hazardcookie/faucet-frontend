@@ -1,8 +1,8 @@
 import { json } from '@sveltejs/kit';
-import type { Mapped_Keys } from '../../../lib/types';
-import type { RequestHandler } from './$types';
-import type { Faucet } from '../../../lib/types';
-import { createAndBridge } from '../../../lib/utils/bridge';
+import type { Mapped_Keys } from '../../lib/types';
+import type { RequestHandler } from '@sveltejs/kit';
+import type { Faucet } from '../../lib/types';
+import { createAndBridge } from '../../lib/utils/bridge';
 
 export const GET: RequestHandler = async () => {
   const wallet: Mapped_Keys = await createAndBridge();
