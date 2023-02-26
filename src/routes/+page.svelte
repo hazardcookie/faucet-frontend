@@ -6,31 +6,30 @@
   let fetching = 'no';
   let wallet: any;
 
-
   async function create() {
     fetching = 'yes';
     const response = await fetch('/api/fund');
     const data = await response.json();
     if (response.ok) {
-      wallet = data
+      wallet = data;
       fetching = 'no';
       loading = false;
       return data as Faucet;
     } else {
-      return { address: "error", secret: "error", balance: 0} as Faucet
+      return { address: 'error', secret: 'error', balance: 0 } as Faucet;
     }
   }
 </script>
 
 <button class="faucet_button" on:click={create}>Fund Wallet</button>
-  {#if loading}
-  <p></p>
-    {#if fetching === 'yes'}
-      <p>Generating wallet, please wait...</p>
-    {/if}
-  {:else}
-    <Card {wallet} />
+{#if loading}
+  <p />
+  {#if fetching === 'yes'}
+    <p>Generating wallet, please wait...</p>
   {/if}
+{:else}
+  <Card {wallet} />
+{/if}
 
 <style>
   .faucet_button {
