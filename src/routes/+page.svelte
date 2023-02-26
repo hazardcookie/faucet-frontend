@@ -25,6 +25,7 @@
       body: data
     });
     const responseData = await response.json();
+    wallet = responseData;
     // { success: true, errors: {} } object
     form = responseData;
 
