@@ -1,47 +1,25 @@
 <script lang="ts">
-  import type { PageData } from './$types';
-  import { invalidateAll } from '$app/navigation';
-  import Card from '../lib/components/Card.svelte';
-  import type { Faucet } from '../lib/types/';
+  import Card from '$lib/components/Card.svelte';
+  import type { Faucet } from '$lib/types/';
 
-  type Data = {
-    success: boolean;
-    errors: Record<string, string>;
-  };
+  let loading = false;
 
-  export let data: PageData;
-  let wallet: Faucet;
+  let wallet: Faucet | undefined;
 
-  // used in the template
-  let form: Data;
-  async function create(event: Event) {
-    const formEl = event.target as HTMLFormElement;
-    const data = new FormData(formEl);
-    // you can see everything about the form
-    console.dir(form);
-
-    const response = await fetch(formEl.action, {
-      method: 'POST',
-      body: data
-    });
-    const responseData = await response.json();
-    wallet = responseData;
-    // { success: true, errors: {} } object
-    form = responseData;
-
-    // reset form
-    formEl.reset();
-
-    // rerun `load` function for the page
-    await invalidateAll();
+  async function create() {
+    loading = true;
+    const response = await fetch('/api/fund');
+    const data = await response.json();
+    wallet = data;
+    console.log(data)
+    return data;
   }
 </script>
 
-<form on:submit|preventDefault={create} method="POST">
-  <button class="faucet_button" type="submit">Fund Wallet</button>
-</form>
-
-{#if form?.success}
+<button class="faucet_button" on:click={create}>Fund Wallet</button>
+{#if loading === true}
+  Creating and funding wallet, please wait...
+{:else if wallet !== undefined}
   <Card {wallet} />
 {/if}
 
