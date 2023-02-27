@@ -33,7 +33,7 @@ export async function createAndBridge() {
     if (r.result.transactions.length > 0) break;
   }
 
-  const result = await bridge(client, xrpl_wallet, evm_wallet.mapped_evm_public_address, 428.4);
+  const result = await bridge(client, xrpl_wallet, evm_wallet.mapped_evm_public_address, 428.6);
   console.log(result);
 
   client.disconnect();
