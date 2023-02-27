@@ -2,7 +2,7 @@
 </script>
 
 <div class="footer">
-  Made by&nbsp;<a href="http://twitter.com/hazardcookie">Hazard Cookie</a>
+  Made by&nbsp;<a href="http://twitter.com/hazardcookie">@Hazardcookie</a>
 </div>
 
 <style>
