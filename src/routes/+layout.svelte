@@ -17,4 +17,10 @@
     margin-bottom: 6rem;
     max-width: 800px;
   }
+
+  @media only screen and (max-width: 600px) {
+    .dapp_container {
+      margin-bottom: 4rem;
+    }
+  }
 </style>
